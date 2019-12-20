@@ -1,5 +1,5 @@
 "use stric";
-class User{
+module.exports = class User{
     constructor(email, password){
         this.email = email;
         this.password = password;
