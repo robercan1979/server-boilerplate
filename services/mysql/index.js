@@ -1,12 +1,8 @@
 const database = require('mysql')
-const dbconfig = {
-    host: 'localhost',
-    user: 'root',
-    password: 'AF2016seg*',
-    database: 'usertest'
-}
+const { mysqlConfig }  = require('../../config/database')
 const { promisify } = require('util')
-const connection = database.createPool(dbconfig)
+const connection = database.createPool( mysqlConfig )
+
 connection.getConnection((error, connection) => {
     if(error){
         if (error.code === 'PROTOCOL_CONNECTION_LOST') console.error('DATABASE CONNECTION CLOSED')

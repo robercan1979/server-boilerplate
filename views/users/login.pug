@@ -1,0 +1,36 @@
+extends ../shared/layout.pug
+
+block content
+  h1(Class="text-center mt-5")= 'User login' 
+  div(class=" col-12 col-md-6 container container-blue p-4")
+    form(action="/user/login" method="post")
+      div(class="form-group")
+        label(for="email")= 'Email'
+
+        if(error && error.email)
+          input(type="email" class="form-control is-invalid" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email" value= datalogin.email)
+        else
+           input(type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email" value= datalogin.email)
+
+        small(id="emailHelp" class="form-text text-muted")= "We'll never share your email with anyone."
+ 
+      div(class="form-group")
+        label(for="password")= 'password'
+        
+        if(error && error.password)
+          input(type="password" class="form-control is-invalid" id="password" name="password" aria-describedby="emailHelp"  placeholder="******" value= datalogin.password)
+        else
+          input(type="password" class="form-control" id="password" name="password" aria-describedby="emailHelp"  placeholder="******" value= datalogin.password)
+
+        small(id="emailHelp" class="form-text text-muted")= "Type your personal password."
+
+      if(error && error.message)
+        div(class="form-group text-right")
+          div(class="alert alert-danger" role="alert")= error.message
+
+      div(class="form-group text-right")
+        input(type="submit" class="btn btn-primary btn-block" value="Enter") 
+
+      div(class="form-group text-right")
+        div= "Not registered? "
+          a(href="/signup" class="badge badge-secondary")= "Create an acount"

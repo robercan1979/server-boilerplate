@@ -20,11 +20,13 @@
   "scripts": {
     "dev": "nodemon server.js",
     "start": "node server.js",
-    "test": "gulp test"
+    "test": "gulp sass"
   },
   "dependencies": {
     "axios": "^0.19.0",
+    "bcrypt": "^3.0.7",
     "body-parser": "^1.15.0",
+    "bootstrap": "^4.4.1",
     "cookie-parser": "^1.4.1",
     "express": "^4.13.4",
     "morgan": "^1.9.1",
@@ -37,7 +39,7 @@
     "timeago.js": "^4.0.1"
   },
   "devDependencies": {
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
     "gulp-sass": "^2.2.0",
     "gulp-sourcemaps": "^1.6.0",
     "nodemon": "^2.0.2"

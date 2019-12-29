@@ -5,6 +5,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+
 // Custom routes
 var index = require('./routes/index');
 
@@ -14,6 +15,9 @@ var server = http.createServer(app);
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
+
+// Disable X-Powered-by header for more security 
+app.disable('x-powered-by');
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
