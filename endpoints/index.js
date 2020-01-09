@@ -1,5 +1,5 @@
-const user = require('./user')
-const login = require('./user/login')
+const user = require('./api/user')
+const login = require('./api/login')
 const imagen = require('./api/imagen')
 module.exports  = {
     user,

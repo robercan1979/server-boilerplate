@@ -16,9 +16,9 @@ const user = ({ axios }) => ({
         )
     },
     post: async (req, res) => {
-        const {body} = req
-
-        let password = bcrypt.hashSync(body.password, 10)
+        const {body} = req 
+        console.log(body)
+        let password = bcrypt.hashSync(body.password, 8)
 
         await dbconnection.query(`INSERT INTO user(iduser, email,name,lastname,date_registration,password)VALUES (null, '${body.email}', '${body.name}', '${body.lastname}', now(), '${password}')`).then(
             data=>{ 
