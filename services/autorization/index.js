@@ -17,7 +17,7 @@ function decodeToken(token){
         try{
             const payload = jwt.decode(token, config.secretKey)
 
-            if(payload.exp <= moment().unix()) reject({ status: 403, message: 'El token haq expirado' })
+            if(payload.exp <= moment().unix()) reject({ status: 403, message: 'El token ha expirado' })
             resolve(payload.sub)
         }
         catch(error){

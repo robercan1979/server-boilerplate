@@ -1,0 +1,13 @@
+version: '3'
+services:
+    mysql:
+        image: mariadb:10.3
+        restart: always
+        environment: 
+            MYSQL_ROOT_PASSWORD: AF2016seg
+        volumes:
+            - ./:/var/lib/mysql
+    web:
+        build: .
+        ports:
+            - "4000:3000"
