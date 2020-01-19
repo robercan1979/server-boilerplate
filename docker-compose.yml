@@ -1,13 +1,20 @@
-version: '3'
+version: '2'
+networks:
+    robercan1979:
+      driver: bridge
 services:
     mysql:
-        image: mariadb:10.3
-        restart: always
-        environment: 
-            MYSQL_ROOT_PASSWORD: AF2016seg
+        image: 'mariadb:10.4-bionic'
+        user: root
         volumes:
-            - ./:/var/lib/mysql
+            - '/var/lib/docker/volumes/mariadb_data/_data:/bitnami'
+        networks:
+            - robercan1979
+        environment:
+            - MYSQL_ROOT_PASSWORD=AF2016seg*
     web:
         build: .
         ports:
             - "4000:3000"
+        networks:
+            - robercan1979

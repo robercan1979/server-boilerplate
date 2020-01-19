@@ -22,9 +22,10 @@ router.post('/api/image', imgHandler.post);
 router.put('/api/image', imgHandler.put);
 router.delete('/api/image', imgHandler.delete);
 
-router.get('/api/users', auth, userHandler.get);
+router.get('/api/users', userHandler.gets);
+router.get('/api/user/:id', userHandler.get);
 router.post('/api/user', userHandler.post);
 router.put('/api/user/:id', userHandler.put);
-router.delete('/api/user/:id', userHandler.delete);
+router.delete('/api/user/:id', auth, userHandler.delete);
 
 module.exports = router;

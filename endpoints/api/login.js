@@ -1,6 +1,6 @@
 'use strict'
 const userClass = require('../../models/user')
-const dbconnect = require('../../services/mysql')
+const dbconnect = require('../../services/mariadb')
 const authService = require('../../services/autorization/index')
 const bcrypt = require('bcrypt')
 
